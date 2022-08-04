@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ] ; then
+    echo "container ID required"
+    exit 1
+fi
+
+echo "Deploying container: $1";
+sleep $((RANDOM % 60)) ## mocking deployment
+echo "Deployed successfully";
