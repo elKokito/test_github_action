@@ -1,13 +1,26 @@
-Simple express application with tests and connection to Postgres
+Hey there 👋 we're excited that you're considering joining our mission to help the helpers!
 
-# List Commands
+The goal of this exercise is to evaluate your ability to: 
+* Understand version control management, from commit to production
+* Navigate unfamiliar applications
+* Know your toolkit, research features the pipeline offers
+* Design for failure
+* Proper use commits and messages
+* Write documentation / README / changelog
+
+Code should be submitted in a Git repository with clear documentation on what developers are expected to do to add new features. 
+Feel free to specify any assumptions that you’ve made, along with any missing details that would complete the solution.
+
+If you require further clarification, then please do not hesitate to ask.
+
+## List Commands
 
 | command | description |
 | --- |  ---|
 | `npm test` | run all tests | 
 | `npm start` | start express server | 
 
-# Environment Variables
+## Environment Variables
 | name | default | description |
 | --- | ---- | --- |
 | PORT | 3000 | number indicating which port to run the server |
@@ -29,7 +42,7 @@ The infrastructure team is experimenting with containers, however, the team is n
 * Create docker image and ensure application runs on port 80
 * Create workflow to deploy `main` branch
 
-#### New commands
+##### Extra commands 
 | command | description |
 |-----|----|
 | `./script/deploy <docker image id>` | Infrastrutured provided script to deploy a docker image |
