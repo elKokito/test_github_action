@@ -26,10 +26,10 @@ Developers make sure to run `npm test` before pushing their PR
 ### Scenario #2 
 The infrastructure team is experimenting with containers, however, the team is not familiar with Docker
 
-| command | description |
-|-----|----|
-| `./script/deploy <docker image id>` | Infrastrutured provided script to deploy a docker image |
-
 * Create docker image and ensure application runs on port 80
 * Create workflow to deploy `main` branch
 
+#### New commands
+| command | description |
+|-----|----|
+| `./script/deploy <docker image id>` | Infrastrutured provided script to deploy a docker image |
