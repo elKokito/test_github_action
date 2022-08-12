@@ -11,13 +11,13 @@ The goal of this exercise is to evaluate your ability to:
 Code should be submitted in a Git repository with clear documentation on what developers are expected to do to add new features. 
 Feel free to specify any assumptions that you’ve made, along with any missing details that would complete the solution.
 
-'''
+```
 # deploy an docker image to production
 #
 # Usage:
 #  $ ./deploy jane:{sha}
 # * image-id:  docker image id
-'''
+```
 
 We are not expecting this to be deploy in actual infrastructure, only building the docker image and calling the deploy script
 
