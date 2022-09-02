@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# deploy an docker image to production
+#
+# Usage:
+#  $ ./deploy jane:{sha}
+# * image-id:  docker image id
+
 
 if [ -z "$1" ] ; then
     echo "container ID required"
