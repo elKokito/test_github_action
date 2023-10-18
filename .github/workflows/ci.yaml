@@ -11,7 +11,7 @@ on:
 
 
 jobs:
-  container-job:
+  tests:
     runs-on: ubuntu-latest
 
     # running a postgres for uni tests
