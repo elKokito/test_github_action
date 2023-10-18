@@ -18,7 +18,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: postgrespw
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -34,3 +34,5 @@ jobs:
         run: npm install
       - name: run test
         run: npm test
+        env:
+          PGPORT: 5432
