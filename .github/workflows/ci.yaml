@@ -5,6 +5,7 @@ on:
     types:
       - opened
       - reopened
+      - synchronize
     branches:
       - 'main'
 
@@ -17,6 +18,8 @@ jobs:
     services:
       postgres:
         image: postgres
+        ports:
+          - '5432:5432'
         env:
           POSTGRES_PASSWORD: postgrespw
         options: >-
@@ -36,3 +39,4 @@ jobs:
         run: npm test
         env:
           PGPORT: 5432
+          PGHOST: 127.0.0.1
