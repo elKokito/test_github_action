@@ -37,4 +37,4 @@ jobs:
           tags: jane:${{ github.sha }}
 
       - name: deploy docker image
-        run: ./script/deploy
+        run: ./script/deploy jane:${{ github.sha }}
