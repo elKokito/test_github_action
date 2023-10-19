@@ -1,0 +1,42 @@
+name: npm test
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - 'main'
+
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    # running a postgres for uni tests
+    services:
+      postgres:
+        image: postgres
+        ports:
+          - '5432:5432'
+        env:
+          POSTGRES_PASSWORD: postgrespw
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/Hydrogen'
+      - name: install dependencies
+        run: npm install
+      - name: run test
+        run: npm test
+        env:
+          PGPORT: 5432
+          PGHOST: 127.0.0.1
