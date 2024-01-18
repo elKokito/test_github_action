@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello"
-      - env:
+      - run: |
+          gh issue edit $ISSUE_URL --add-label "bug"
+        env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          gh issue edit $ISSUE_URL --add-label "triage"
