@@ -18,7 +18,7 @@ jobs:
 
       - name: update version
         run: |
-          echo 1 > config/version.yaml
+          echo 1 > version.yaml
 
       - name: Create Pull Request
         id: update-image-pr
