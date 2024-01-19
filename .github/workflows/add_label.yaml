@@ -11,5 +11,5 @@ jobs:
       - run: |
           gh issue edit $ISSUE_URL --add-label "bug"
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
