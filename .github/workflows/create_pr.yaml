@@ -1,0 +1,35 @@
+name: Create Pull Request in External Repository
+
+on:
+  # Define the event that will trigger this workflow
+  push:
+    branches:
+      - main # Adjust this to match the branch you want to trigger from
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone External Repository
+        uses: actions/checkout@v4
+        with:
+          repository: 'elKokito/config'  # Replace with 'owner/repo'
+          token: ${{ secrets.PAT_TOKEN }}     # Token with access to the external repo
+
+      - name: update version
+        run: |
+          echo 1 > config/version.yaml
+
+      - name: Create Pull Request
+        id: update-image-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.PATH_TOKEN}}
+          add-paths: |
+            version.yaml
+          commit-message: 'Update Image Version to ${{ github.sha }}'
+          branch: update-image-version-${{ github.sha }}
+          title: 'Update Image Version to ${{ github.sha }}'
+          author: ${{ github.actor }}
+          committer: ${{ github.actor }}
+
