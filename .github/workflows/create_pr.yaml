@@ -30,6 +30,4 @@ jobs:
           commit-message: 'Update Image Version to ${{ github.sha }}'
           branch: update-image-version-${{ github.sha }}
           title: 'Update Image Version to ${{ github.sha }}'
-          author: koki.testing@gmail.com
-          committer: ${{ github.actor }}
 
