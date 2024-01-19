@@ -24,7 +24,7 @@ jobs:
         id: update-image-pr
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.PATH_TOKEN}}
+          token: ${{ secrets.PAT_TOKEN}}
           add-paths: |
             version.yaml
           commit-message: 'Update Image Version to ${{ github.sha }}'
