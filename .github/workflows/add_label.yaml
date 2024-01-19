@@ -1,0 +1,15 @@
+name: add label to open issue
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  label_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
+      - run: |
+          gh issue edit $ISSUE_URL --add-label "bug"
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
