@@ -1,0 +1,14 @@
+name: test workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  cache-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo 'hello'
+
